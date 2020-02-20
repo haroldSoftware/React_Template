@@ -39,7 +39,7 @@ class Login extends Component {
         <section
           id="login"
           className="login_section"
-        >
+        >   
           <h2>Login</h2>
           <form onSubmit={this.handleLoginSubmit}>
             <div className="form-group">

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDom from 'react-dom';
 
-class Home extends Component {
+class About extends Component {
   componentDidMount() {
 
   }
@@ -11,13 +11,13 @@ class Home extends Component {
     return (
       <div>
 
-        HOME COMPONENT
+        ABOUT COMPONENT
 
       </div>
     )
   }
 }
 
-export default Home;
+export default About;
 
 //==============================================================================

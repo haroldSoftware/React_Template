@@ -13,6 +13,9 @@ const NavBar = ({ currentUser, logout }) => {
       <li className="nav-item">
         <NavLink className="nav-link" to="/register">Register</NavLink>
       </li>
+      <li className="nav-item">
+        <NavLink className="nav-link" to="/about">About</NavLink>
+      </li>
     </>
   );
 
@@ -53,12 +56,12 @@ const NavBar = ({ currentUser, logout }) => {
   return (
     <nav>
       <div className="top_container">
-        <strong>3-D Objects App </strong> <br/>
+        <strong> REACT JS TEMPLATE </strong> <br/>
         haroldSoftware@github.com <br/>
       </div>
       <div>
         <br/>
-      </div> 
+      </div>
       <div className="navbar_collapse">
         <ul className="navbar_authlinks">
           { currentUser ? authLinks : links }

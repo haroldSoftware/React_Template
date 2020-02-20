@@ -99,11 +99,6 @@ class Register extends Component {
           </form>
 
         </section>
-        <div className="register_background">
-          <img
-            src={require('./background.jpg')}
-          />
-        </div>
       </div>
     );
   };
