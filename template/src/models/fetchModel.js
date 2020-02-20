@@ -1,23 +1,23 @@
 //============================================================================//
 const endPointHome = `http://localhost:3300/`;
-const endPointRegister = `http://localhost:3300/register`;
+const endPointRegister = `http://localhost:3300/register/`;
 const endPointLogin = `http://localhost:3300/login`;
-const endPointObjects = `http://localhost:3300/three_D_objs`;
 //============================================================================//
 
 class FetchModel {
 
+//============================================================================//
+//=================================ALL========================================//
+//============================================================================//
+
   static all = () => {
     return fetch(endPointHome)
-      // return a promise with response.json() that we can use to load todos from the DB in frontend components
       .then(response => response.json())
       .catch(err => console.log('Could not get data \n', err));
   };
 
 //============================================================================//
-
-//============================================================================//
-//::::::::::::::::::::::::::::::::LOGINS:::::::::::::::::::::::::::::::::::::://
+//::::::::::::::::::::::::::::::::REGISTER:::::::::::::::::::::::::::::::::::://
 //============================================================================//
 
   static createRegister = (input1) => {
@@ -30,90 +30,48 @@ class FetchModel {
       body: JSON.stringify(input1)
     })
       .then(response => response.json())
-      .catch(err => console.error('Sorry no data here[fetchModel]', err));
+      .catch(err => console.error('Sorry create regs error', err));
 
   }
 
 //============================================================================//
 
   static deleteRegisters = (input1) => {
-    // debugger;
-    return fetch(`http://localhost:3300/register/${input1.oid}`, {
+    return fetch(endPointRegister + `${input1.oid}`, {
       method: "DELETE",
     })
-      // .then(response => response.json())
-      .catch(err => console.error(`Something is broken...`, err));
+      .catch(err => console.error(`Sorry delete regs error`, err));
   };
 
 //============================================================================//
 
   static updateRegisters = (input1) => {
-    return fetch(`http://localhost:3300/register/${input1.oid}`, {
+    return fetch(endPointRegister + `${input1.oid}`, {
       method: "PUT",
       mode: "cors",
-      headers: {
-        'Content-Type': 'application/json'
-      },
+      headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(input1)
     })
       .then(response => response.json())
-      .catch(err => console.error('Sorry no data here', err));
+      .catch(err => console.error('Sorry update regs error', err));
   }
 
+//============================================================================//
+
+//============================================================================//
+//::::::::::::::::::::::::::::::::::LOGIN::::::::::::::::::::::::::::::::::::://
 //============================================================================//
 
   static loginUser = (creds) => {
-    console.log("creds", creds);
     return fetch(endPointLogin, {
       method: "POST",
       mode: "cors",
-      headers: {
-        'Content-Type': 'application/json'
-      },
+      headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(creds)
     })
       .then(response => response.json())
-      // deserialize json object into std js obj
-      .catch(err => console.error('Sorry no data here[fetch-login]', err));
+      .catch(err => console.error('Sorry fetch login error', err));
   }
-
-//   static getUserInfo = (creds) => {
-//   return fetch(endPointLogin, {
-//     method: "GET",
-//     mode: "cors",
-//     headers: {
-//       'authorization': 'Bearer ${localstorage.uid}'
-//     },
-//   })
-//     .then(response => response.json())
-//     .then(data => {
-//       this.setState({
-//         rowid: data.rowid,
-//         username: data.user[0].username,
-//         email: data.user[0].email
-//       })
-//     })
-//     .catch(err => console.error('Sorry no data here[login-info]', err));
-// }
-
-//============================================================================//
-
-//============================================================================//
-//:::::::::::::::::::::::::::::::::OBJECTS:::::::::::::::::::::::::::::::::::://
-//============================================================================//
-
-static createObjects = (input1) => {
-  return fetch(endPointObjects, {
-    method: "POST",
-    mode: "cors",
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(input1)
-  })
-    .then(response => response.json())
-    .catch(err => console.error('Sorry no data here', err));
-}
 
 //============================================================================//
 
@@ -121,4 +79,6 @@ static createObjects = (input1) => {
 
 export default FetchModel;
 
+//============================================================================//
+//=====================================END_ALL================================//
 //============================================================================//
