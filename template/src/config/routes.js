@@ -3,7 +3,8 @@ import { Switch, Route, withRouter, Redirect } from 'react-router-dom';
 import Home from '../Home/Home';
 import Login from '../Auth/Login';
 import Register from '../Auth/Register';
-import About from '../About/About'; 
+import About from '../About/About';
+import Profile from '../Profile/Profile';
 
 export default withRouter(({ setCurrentUser, currentUser, history }) => {
 
@@ -18,11 +19,13 @@ export default withRouter(({ setCurrentUser, currentUser, history }) => {
   return (
     <Switch>
       <Route exact path='/' component={Home} />
+      <Route path='/about' component={About} />
       <Route path='/login' render={() => <Login history={history}
         setCurrentUser={setCurrentUser} />}
       />
       <Route path='/register' component={Register} />
-      <Route path='/about' component={About} />
+      <PrivateRoute path='/profile' component={Profile} />
+      <PrivateRoute path='/home' component={Home} /> 
     </Switch>
   );
 });

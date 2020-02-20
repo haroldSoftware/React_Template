@@ -24,22 +24,15 @@ const NavBar = ({ currentUser, logout }) => {
       <li className="nav-item">
         <NavLink
           className="nav-link"
-          exact to="/profile">
+          to="/profile">
             Profile
         </NavLink>
       </li>
       <li className="nav-item">
         <NavLink
           className="nav-link"
-          exact to="/home">
+          to="/home">
             Home
-        </NavLink>
-      </li>
-      <li className="nav-item">
-        <NavLink
-          className="nav-link"
-          to="/contacts">
-            Contacts
         </NavLink>
       </li>
       <li className="nav-item">
