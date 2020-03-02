@@ -113,16 +113,6 @@ renderScene = () => {
   this.renderer.render(this.scene, this.camera)
 }
 
-/*
-
-<div
-  className="home3D"
-
-  ref={(mount) => { this.mount = mount }}
->
-</div>
-
-*/
 
 //==============================================================================
 
