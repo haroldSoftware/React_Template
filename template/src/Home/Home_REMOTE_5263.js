@@ -113,14 +113,23 @@ renderScene = () => {
   this.renderer.render(this.scene, this.camera)
 }
 
+
 //==============================================================================
 
 render(){
   return(
     <div>
-      ========== <br/>
-      ===HOME=== <br/>
-      ========== <br/>
+    <div
+      className="home3D"
+
+      ref={(mount) => { this.mount = mount }}
+    >
+    </div>
+      <span className="buttonBarHome3D">
+        <button>
+        Reset Position
+        </button>
+      </span>
     </div>
   )
 }
