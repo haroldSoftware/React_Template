@@ -83,13 +83,13 @@ class Profile extends React.Component {
     this.scene.add(this.cube3b)
 
     const geometry3c = new THREE.BoxGeometry(1, 9, 1)
-    const material3c = new THREE.MeshBasicMaterial({ color: '#FFFFFF'     })
+    const material3c = new THREE.MeshBasicMaterial({color: '#FFFFFF'})
     this.cube3c = new THREE.Mesh(geometry3c, material3c)
     this.cube3c.position.set(4,5,0);
     this.scene.add(this.cube3c)
 //==============================================================================
     this.start()
-  }
+  } // ends componentDidMount()
   componentWillUnmount(){
     this.stop()
     this.mount.removeChild(this.renderer.domElement)
@@ -137,6 +137,13 @@ class Profile extends React.Component {
     });
   }
 
+  resetComponent = (event) => {
+    event.preventDefault();
+    this.camera.position.x = 0;
+    this.camera.position.y = 0;
+    this.camera.position.z = 20;
+  }
+
 //::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
   nullFunc = (event) => {
@@ -159,8 +166,8 @@ class Profile extends React.Component {
         >
         </div>
         <span className="buttonBarHome3D">
-          <button>
-          Reset Position
+          <button onClick={this.resetComponent}>
+          Reset
           </button>
         </span>
       </div>
