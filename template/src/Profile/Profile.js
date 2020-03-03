@@ -139,9 +139,12 @@ class Profile extends React.Component {
 
   resetComponent = (event) => {
     event.preventDefault();
-    this.camera.position.x = 0;
+    this.camera.position.x = 3;
     this.camera.position.y = 0;
-    this.camera.position.z = 20;
+    this.camera.position.z = 50;
+    this.camera.rotation.x = 0;
+    this.camera.rotation.y = 0;
+    this.camera.rotation.z = 0;
   }
 
 //::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
