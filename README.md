@@ -13,3 +13,7 @@
 * for both backend and template (front end), package.json contains required node modules 
 * in terminal, run "npm i" for both directories 
 * then run "nodemon" to start server and react 
+
+# NOTE 
+* npm dependencies in package.json may have become outdated
+* fix this by updating 
